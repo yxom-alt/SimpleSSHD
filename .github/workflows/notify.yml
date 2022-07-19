@@ -1,0 +1,8 @@
+name: CI.yml
+
+on: workflow_dispatch
+
+jobs:
+  more-info:
+    steps:
+      run: echo Placeholder
