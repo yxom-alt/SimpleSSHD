@@ -1,0 +1,17 @@
+name: CI build
+
+on:
+  - pull_requests: ''
+  - workflow_dispatch: ''
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: sparkfabrik/android-build-action@v1
+        with:
+          output-path: simplesshd.apk
+          browserstack-upload: true
+          browserstack-username: ${{ secrets.BROWSERSTACK_USERNAME }}
+          browserstack-access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
